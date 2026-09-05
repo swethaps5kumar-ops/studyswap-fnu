@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Verify email — StudySwap FNU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <a class="wordmark" href="index.html">Study<span>Swap</span> FNU</a>
+    <nav><a href="login.html">Log in</a></nav>
+  </div>
+
+  <div class="container narrow">
+    <p class="eyebrow">Step 2 of 3</p>
+    <h1>Check your inbox</h1>
+    <p class="muted">We sent a 6-digit code to <strong id="emailLabel"></strong>. Enter it below.</p>
+
+    <div class="card">
+      <div id="alert" class="alert hidden"></div>
+      <form id="otpForm">
+        <label for="otp">Verification code</label>
+        <input id="otp" class="otp-input" required maxlength="6" inputmode="numeric" placeholder="000000" />
+        <button type="submit" class="btn-gold btn-block" style="margin-top:20px;" id="submitBtn">Verify email</button>
+      </form>
+      <p class="form-footer">Didn't get a code? <button id="resendBtn" class="btn-outline btn-sm" style="margin-top:6px;">Resend code</button></p>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/verify-otp.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log in — StudySwap FNU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <a class="wordmark" href="index.html">Study<span>Swap</span> FNU</a>
+    <nav><a href="register.html">Register</a></nav>
+  </div>
+
+  <div class="container narrow">
+    <p class="eyebrow">Welcome back</p>
+    <h1>Log in</h1>
+
+    <div class="card">
+      <div id="alert" class="alert hidden"></div>
+      <form id="loginForm">
+        <label for="email">Email</label>
+        <input id="email" type="email" required autocomplete="email" />
+
+        <label for="password">Password</label>
+        <input id="password" type="password" required autocomplete="current-password" />
+
+        <button type="submit" class="btn-gold btn-block" style="margin-top:20px;" id="submitBtn">Log in</button>
+      </form>
+      <p class="form-footer">New here? <a href="register.html">Create an account</a></p>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "studyswap-fnu",
+  "version": "1.0.0",
+  "description": "StudySwap FNU - a campus marketplace for students to buy and sell items",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "seed-admin": "node server/seedAdmin.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "nodemailer": "^6.9.14"
+  }
+}

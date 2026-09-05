@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin — StudySwap FNU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <a class="wordmark" href="admin.html">Study<span>Swap</span> FNU <span style="color:#C7CCDC; font-size:0.9rem;">/ admin</span></a>
+    <nav>
+      <span class="userchip" id="userChip"></span>
+      <button id="logoutBtn">Log out</button>
+    </nav>
+  </div>
+
+  <div class="container">
+    <p class="eyebrow">Admin console</p>
+    <h1>User management</h1>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="pending">Pending approvals</button>
+      <button class="tab-btn" data-tab="all">All users</button>
+      <button class="tab-btn" data-tab="add">Add user</button>
+    </div>
+
+    <div id="alert" class="alert hidden"></div>
+
+    <div id="pendingTab">
+      <table>
+        <thead><tr><th>Name</th><th>Email</th><th>Registered</th><th></th></tr></thead>
+        <tbody id="pendingBody"></tbody>
+      </table>
+      <p id="pendingEmpty" class="empty-state hidden">No registrations waiting on approval.</p>
+    </div>
+
+    <div id="allTab" class="hidden">
+      <table>
+        <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th></th></tr></thead>
+        <tbody id="allBody"></tbody>
+      </table>
+    </div>
+
+    <div id="addTab" class="hidden">
+      <div class="card" style="max-width:460px;">
+        <h2 style="font-size:1.1rem;">Add a user directly</h2>
+        <p class="muted" style="font-size:0.85rem;">Skips OTP verification — the account is created already approved.</p>
+        <form id="addUserForm">
+          <label for="firstName">First name</label>
+          <input id="firstName" required />
+          <label for="lastName">Last name</label>
+          <input id="lastName" required />
+          <label for="email">Email</label>
+          <input id="email" type="email" required />
+          <label for="password">Temporary password</label>
+          <input id="password" type="password" required minlength="6" />
+          <label for="role">Role</label>
+          <select id="role">
+            <option value="student">Student</option>
+            <option value="admin">Admin</option>
+          </select>
+          <button type="submit" class="btn-gold" style="margin-top:20px;">Add user</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

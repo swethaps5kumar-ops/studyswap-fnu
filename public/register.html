@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Register — StudySwap FNU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <a class="wordmark" href="index.html">Study<span>Swap</span> FNU</a>
+    <nav><a href="login.html">Log in</a></nav>
+  </div>
+
+  <div class="container narrow">
+    <p class="eyebrow">Step 1 of 3</p>
+    <h1>Create your account</h1>
+    <p class="muted">Register with your student email — we'll send you a verification code next.</p>
+
+    <div class="card">
+      <div id="alert" class="alert hidden"></div>
+      <form id="registerForm">
+        <label for="firstName">First name</label>
+        <input id="firstName" required autocomplete="given-name" />
+
+        <label for="lastName">Last name</label>
+        <input id="lastName" required autocomplete="family-name" />
+
+        <label for="email">Student email</label>
+        <input id="email" type="email" required autocomplete="email" placeholder="you@fnu.edu" />
+
+        <label for="password">Password</label>
+        <input id="password" type="password" required minlength="6" autocomplete="new-password" />
+
+        <button type="submit" class="btn-gold btn-block" style="margin-top:20px;" id="submitBtn">Send verification code</button>
+      </form>
+      <p class="form-footer">Already registered? <a href="login.html">Log in</a></p>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

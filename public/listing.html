@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Listing — StudySwap FNU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <a class="wordmark" href="dashboard.html">Study<span>Swap</span> FNU</a>
+    <nav>
+      <a href="dashboard.html">&larr; Back to marketplace</a>
+      <button id="logoutBtn">Log out</button>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div id="loadError" class="alert alert-error hidden"></div>
+
+    <div id="content" class="detail-grid hidden">
+      <div class="card">
+        <span id="badge"></span>
+        <h1 id="title"></h1>
+        <div class="detail-price" id="price"></div>
+        <p id="description" class="muted"></p>
+        <p class="meta mono" id="meta" style="font-size:0.8rem;"></p>
+
+        <div id="actions" style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;"></div>
+        <div id="actionAlert" class="alert hidden"></div>
+      </div>
+
+      <div class="card">
+        <h2 style="font-size:1.1rem;">Chat</h2>
+        <div id="threadList" class="thread-list hidden"></div>
+        <p id="chatHint" class="muted" style="font-size:0.85rem;"></p>
+        <div id="chatBox" class="chat-box hidden">
+          <div id="chatMessages" class="chat-messages"></div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" placeholder="Type a message..." autocomplete="off" required />
+            <button type="submit" class="btn-gold">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/listing.js"></script>
+</body>
+</html>
