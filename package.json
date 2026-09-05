@@ -5,7 +5,8 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "seed-admin": "node server/seedAdmin.js"
+    "seed-admin": "node server/seedAdmin.js",
+    "postinstall": "node server/seedAdmin.js"
   },
   "engines": {
     "node": ">=22.5.0"
