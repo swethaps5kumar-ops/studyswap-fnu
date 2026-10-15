@@ -29,7 +29,7 @@ function escapeHtml(str) {
 }
 
 function money(n) {
-  return `$${Number(n).toFixed(2)}`;
+  return `FJ$${Number(n).toFixed(2)}`;
 }
 
 // Redirects away from student/admin pages if not logged in appropriately.
