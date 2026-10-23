@@ -23,10 +23,10 @@ async function loadHome(query) {
     const data = await res.json();
     grid.innerHTML = data.listings.map(homeCardHtml).join('');
     empty.classList.toggle('hidden', data.listings.length > 0);
-    document.getElementById('itemsHeading').textContent = query ? `Results for "${query}"` : 'Latest items';
+    document.getElementById('itemsHeading').textContent = query ? `Results for "${query}"` : 'Just listed';
   } catch (err) {
     grid.innerHTML = '';
-    empty.textContent = 'Could not load items right now. Please try again.';
+    empty.textContent = 'Items did not load. Check your connection and refresh the page.';
     empty.classList.remove('hidden');
   }
 }
@@ -41,6 +41,14 @@ let homeTimer = null;
 document.getElementById('heroQuery').addEventListener('input', (e) => {
   clearTimeout(homeTimer);
   homeTimer = setTimeout(() => loadHome(e.target.value.trim()), 300);
+});
+
+document.querySelectorAll('.chip').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('heroQuery').value = btn.dataset.q;
+    loadHome(btn.dataset.q);
+    document.getElementById('itemsHeading').scrollIntoView({ behavior: 'smooth' });
+  });
 });
 
 loadHome('');
