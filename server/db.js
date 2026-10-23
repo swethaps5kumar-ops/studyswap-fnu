@@ -45,4 +45,13 @@ db.exec(`
   );
 `);
 
+// Migration: add the "image" column for databases created before photos were supported.
+// Safe to run every time the server starts - if the column already exists, this just
+// throws (caught below) and nothing changes.
+try {
+  db.exec("ALTER TABLE listings ADD COLUMN image TEXT");
+} catch (err) {
+  // Column already exists - nothing to do.
+}
+
 module.exports = db;

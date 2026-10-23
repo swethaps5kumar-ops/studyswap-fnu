@@ -17,17 +17,46 @@
     </nav>
   </div>
 
-  <div class="container text-center" style="padding-top:70px;">
+  <!-- Hero -->
+  <div class="hero">
     <p class="eyebrow">The FNU campus marketplace</p>
-    <h1 style="font-size:2.4rem; max-width:640px; margin:0 auto 14px;">Pass your stuff to the next student, not the landfill.</h1>
-    <p class="muted" style="max-width:520px; margin:0 auto 28px;">
-      Buy and sell textbooks, dorm gear, and supplies with fellow FNU students —
-      verified by student email, approved by an admin, and easy to chat about before you meet up.
+    <h1>Pass your stuff to the next student, <em>not the landfill.</em></h1>
+    <p class="lead">
+      Buy and sell textbooks, dorm gear and supplies with fellow FNU students.
+      Verified by student email, approved by an admin.
     </p>
-    <div>
+    <form id="heroSearch" class="hero-search">
+      <input id="heroQuery" placeholder="Search for items, e.g. calculator, textbook, fridge" aria-label="Search items" />
+      <button type="submit" class="btn-gold">Search</button>
+    </form>
+    <div class="hero-cta">
       <a href="register.html" class="btn btn-gold" style="margin-right:10px;">Create an account</a>
       <a href="login.html" class="btn btn-outline">I already have one</a>
     </div>
   </div>
+
+  <!-- Latest items -->
+  <div class="section">
+    <h2 id="itemsHeading">Latest items</h2>
+    <p class="sub">Fresh from fellow students. Log in to chat and reserve.</p>
+    <div id="homeGrid" class="tag-grid"></div>
+    <p id="homeEmpty" class="empty-state hidden">No items match your search yet. Try another keyword.</p>
+  </div>
+
+  <!-- How it works -->
+  <div class="section">
+    <h2>How it works</h2>
+    <p class="sub">Three steps from clutter to cash</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Register</h3><p>Sign up with your FNU student email and confirm with a 6-digit code.</p></div>
+      <div class="step"><div class="num">2</div><h3>List or browse</h3><p>Post an item with a photo and price, or search for what you need.</p></div>
+      <div class="step"><div class="num">3</div><h3>Chat and swap</h3><p>Message the seller, reserve the item and meet up on campus.</p></div>
+    </div>
+  </div>
+
+  <div class="site-footer">StudySwap FNU · Made by FNU students, for FNU students</div>
+
+  <script src="js/api.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

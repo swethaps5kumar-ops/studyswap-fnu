@@ -21,6 +21,16 @@ async function loadListing() {
   }
 
   document.getElementById('content').classList.remove('hidden');
+
+  const imageEl = document.getElementById('listingImage');
+  if (listing.image) {
+    imageEl.src = listing.image;
+    imageEl.classList.remove('hidden');
+  } else {
+    imageEl.classList.add('hidden');
+    imageEl.src = '';
+  }
+
   document.getElementById('badge').innerHTML = `<span class="badge badge-${listing.status}">${badgeMap[listing.status]}</span>`;
   document.getElementById('title').textContent = listing.title;
   document.getElementById('price').textContent = money(listing.price);

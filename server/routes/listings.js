@@ -6,6 +6,9 @@ const { requireAuth, requireStudent } = require('../middleware/auth');
 const router = express.Router();
 router.use(requireAuth);
 
+// A photo, base64-encoded, shouldn't exceed about 3MB once encoded (roughly a 2MB photo).
+const MAX_IMAGE_LENGTH = 3 * 1024 * 1024;
+
 function withSeller(listing) {
   const seller = db.prepare('SELECT id, first_name, last_name, email FROM users WHERE id = ?').get(listing.seller_id);
   const reservedByUser = listing.reserved_by
@@ -49,7 +52,7 @@ router.get('/:id', (req, res) => {
 
 // Create a new listing for sale.
 router.post('/', requireStudent, (req, res) => {
-  const { title, description, price, keywords } = req.body;
+  const { title, description, price, keywords, image } = req.body;
   if (!title || price === undefined || price === '') {
     return res.status(400).json({ error: 'Title and price are required.' });
   }
@@ -57,11 +60,17 @@ router.post('/', requireStudent, (req, res) => {
   if (Number.isNaN(numericPrice) || numericPrice < 0) {
     return res.status(400).json({ error: 'Price must be a valid non-negative number.' });
   }
+  if (image && (typeof image !== 'string' || !image.startsWith('data:image/'))) {
+    return res.status(400).json({ error: 'Photo must be a valid image.' });
+  }
+  if (image && image.length > MAX_IMAGE_LENGTH) {
+    return res.status(400).json({ error: 'That photo is too large. Please use one under about 2MB after shrinking.' });
+  }
 
   const info = db.prepare(`
-    INSERT INTO listings (seller_id, title, description, price, keywords, status, created_at)
-    VALUES (?, ?, ?, ?, ?, 'available', ?)
-  `).run(req.session.user.id, title.trim(), (description || '').trim(), numericPrice, (keywords || '').trim(), Date.now());
+    INSERT INTO listings (seller_id, title, description, price, keywords, image, status, created_at)
+    VALUES (?, ?, ?, ?, ?, ?, 'available', ?)
+  `).run(req.session.user.id, title.trim(), (description || '').trim(), numericPrice, (keywords || '').trim(), image || null, Date.now());
 
   const listing = db.prepare('SELECT * FROM listings WHERE id = ?').get(info.lastInsertRowid);
   res.status(201).json({ listing: withSeller(listing) });

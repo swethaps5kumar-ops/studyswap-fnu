@@ -64,6 +64,10 @@
         <label for="description">Description</label>
         <textarea id="description" placeholder="Condition, pickup location, etc."></textarea>
 
+        <label for="image">Photo <span class="muted">(optional, any size - it is shrunk automatically)</span></label>
+        <input id="image" type="file" accept="image/*" />
+        <img id="imagePreview" class="hidden" alt="Selected photo preview" style="margin-top:10px; max-width:100%; max-height:200px; border-radius:8px; border:1px solid var(--line);" />
+
         <div style="display:flex; gap:10px; margin-top:20px;">
           <button type="submit" class="btn-gold">Post listing</button>
           <button type="button" id="cancelListingBtn" class="btn-outline">Cancel</button>

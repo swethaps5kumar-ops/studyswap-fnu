@@ -14,22 +14,32 @@
     <nav><a href="register.html">Register</a></nav>
   </div>
 
-  <div class="container narrow">
-    <p class="eyebrow">Welcome back</p>
-    <h1>Log in</h1>
+  <div class="auth-wrap">
+    <div class="auth-side">
+      <p class="eyebrow">StudySwap FNU</p>
+      <h2>Welcome back to the campus marketplace.</h2>
+      <ul>
+        <li>Find textbooks, dorm gear and supplies from fellow students</li>
+        <li>Chat with sellers and reserve items</li>
+        <li>List your own items with a photo in under a minute</li>
+      </ul>
+    </div>
+    <div class="auth-main">
+      <div class="auth-card">
+        <p class="eyebrow">Welcome back</p>
+        <h1>Log in</h1>
+        <div id="alert" class="alert hidden"></div>
+        <form id="loginForm">
+          <label for="email">Email</label>
+          <input id="email" type="email" required autocomplete="email" placeholder="you@student.fnu.ac.fj" />
 
-    <div class="card">
-      <div id="alert" class="alert hidden"></div>
-      <form id="loginForm">
-        <label for="email">Email</label>
-        <input id="email" type="email" required autocomplete="email" />
+          <label for="password">Password</label>
+          <input id="password" type="password" required autocomplete="current-password" />
 
-        <label for="password">Password</label>
-        <input id="password" type="password" required autocomplete="current-password" />
-
-        <button type="submit" class="btn-gold btn-block" style="margin-top:20px;" id="submitBtn">Log in</button>
-      </form>
-      <p class="form-footer">New here? <a href="register.html">Create an account</a></p>
+          <button type="submit" class="btn-gold btn-block" style="margin-top:22px; padding:12px;" id="submitBtn">Log in</button>
+        </form>
+        <p class="form-footer">New here? <a href="register.html">Create an account</a></p>
+      </div>
     </div>
   </div>
 

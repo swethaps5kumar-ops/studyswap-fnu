@@ -8,11 +8,13 @@ const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin');
 const listingsRoutes = require('./routes/listings');
 const chatRoutes = require('./routes/chat');
+const publicRoutes = require('./routes/public');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
+// Raised from the default (~100kb) so listing photos (sent as base64 text) fit.
+app.use(express.json({ limit: '4mb' }));
 app.use(session({
   secret: process.env.SESSION_SECRET || 'dev-secret-change-me',
   resave: false,
@@ -26,6 +28,7 @@ app.use(session({
 
 if (process.env.TRUST_PROXY === 'true') app.set('trust proxy', 1);
 
+app.use('/api/public', publicRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/listings', listingsRoutes);
