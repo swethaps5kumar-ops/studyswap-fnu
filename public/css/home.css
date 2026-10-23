@@ -140,3 +140,12 @@
 .band-head { margin-bottom: 28px; }
 .band-head .sub { margin: 0; }
 @media (max-width: 520px) { .board-caption { display: none; } }
+
+/* Login page: same headline and pinned tags as the homepage hero */
+.auth-side h1 { color: #fff; font-size: clamp(2.2rem, 3.8vw, 3.3rem); line-height: 1.06; letter-spacing: -0.02em; margin: 0 0 16px; max-width: 11em; }
+.auth-side .lead { color: #CCD3E4; font-size: 1.1rem; max-width: 26em; margin: 0 0 32px; }
+.auth-side .board.mini { height: 230px; background: var(--ink-2, #22345C); max-width: 480px; }
+.auth-side .mini .n1 { left: 22px; top: 34px; }
+.auth-side .mini .n2 { right: 22px; top: 52px; left: auto; }
+@media (max-width: 520px) { .auth-side .board.mini { height: 200px; } .auth-side .mini .n1 { left: 10px; } .auth-side .mini .n2 { right: 10px; } }
+@media (max-width: 800px) { .auth-side::after { display: none; } }
