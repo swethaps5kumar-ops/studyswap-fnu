@@ -149,3 +149,24 @@
 .auth-side .mini .n2 { right: 22px; top: 52px; left: auto; }
 @media (max-width: 520px) { .auth-side .board.mini { height: 200px; } .auth-side .mini .n1 { left: 10px; } .auth-side .mini .n2 { right: 10px; } }
 @media (max-width: 800px) { .auth-side::after { display: none; } }
+
+/* ---------- Inner pages: navy band like the homepage hero ---------- */
+.page-hero { background: var(--ink); color: #fff; padding: 36px 20px 76px; }
+.page-hero.slim { padding: 0 0 70px; }
+.page-hero-inner { max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.page-hero .eyebrow { color: var(--gold); margin: 0 0 6px; }
+.page-hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 2.9rem); letter-spacing: -0.02em; line-height: 1.08; margin: 0 0 8px; }
+.page-hero .lead { color: #CCD3E4; margin: 0; max-width: 32em; }
+.page-hero .btn-gold { padding: 12px 22px; font-size: 1rem; }
+.pull-up { margin-top: -48px; position: relative; }
+.pull-up > .tabs:first-child { background: var(--card); border: 1px solid var(--line); border-radius: 12px 12px 0 0; padding: 6px 12px 0; box-shadow: var(--shadow); margin-bottom: 0; }
+.pull-up .search-bar { background: var(--card); border: 1px solid var(--line); border-top: none; padding: 16px; margin-bottom: 26px; border-radius: 0 0 12px 12px; box-shadow: var(--shadow); }
+.pull-up .search-bar input { padding: 12px 14px; font-size: 1.02rem; }
+.pull-up .search-bar button { padding: 12px 22px; }
+.pull-up > #pendingTab, .pull-up > #allTab { margin-top: 20px; }
+.pull-up table { box-shadow: var(--shadow); border: 1px solid var(--line); }
+#newListingPanel .card { border-top: 4px solid var(--gold); }
+.empty-state { background: var(--card); border: 1.5px dashed var(--line); border-radius: 12px; }
+.page-hero-inner { padding: 0 20px; }
+.auth-side::after { display: none; }
+@media (max-width: 700px) { .pull-up table { display: block; overflow-x: auto; } }

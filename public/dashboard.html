@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/home.css" />
 </head>
 <body>
   <div class="topbar">
@@ -17,15 +18,18 @@
     </nav>
   </div>
 
-  <div class="container">
-    <div class="page-title">
+  <div class="page-hero">
+    <div class="page-hero-inner">
       <div>
         <p class="eyebrow">Marketplace</p>
         <h1 id="pageHeading">Browse listings</h1>
+        <p class="lead">Search what other FNU students are selling, or list your own.</p>
       </div>
       <button id="newListingBtn" class="btn-gold">+ Sell an item</button>
     </div>
+  </div>
 
+  <div class="container pull-up">
     <div class="tabs">
       <button class="tab-btn active" data-tab="browse">Browse</button>
       <button class="tab-btn" data-tab="mine">My listings</button>
@@ -37,7 +41,7 @@
         <button id="searchBtn" class="btn-outline">Search</button>
       </div>
       <div id="browseGrid" class="tag-grid"></div>
-      <p id="browseEmpty" class="empty-state hidden">No items match your search yet. Try another keyword.</p>
+      <p id="browseEmpty" class="empty-state hidden">Nothing here yet. Try another word, or list the item yourself with Sell an item.</p>
     </div>
 
     <div id="mineTab" class="hidden">
